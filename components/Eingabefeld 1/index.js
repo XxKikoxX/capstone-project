@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { locations } from "../../DB/data";
 
+
+
+/* erstellt eine komponente die informationen Anzeigt
+für Eingabefeld 1                   */
+
 export default function Heading() {
   return (
     <Wrapper>

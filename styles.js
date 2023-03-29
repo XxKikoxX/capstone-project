@@ -12,7 +12,5 @@ export default createGlobalStyle`
     /* background: #91fff5; */
     background-image: url("/Logo.png");
     background-repeat: repeat;
-    
-
   }
 `;

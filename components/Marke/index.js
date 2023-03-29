@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { locations } from "../../DB/data";
 
+
+
 /* Hier entsteht meine Marke
    mit dem Benutzernamen der 
    location id und der location */
