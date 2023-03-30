@@ -12,9 +12,16 @@ export default function Marke() {
     <>
       <Wrapper>
         <Border>
-          <article>
-            <p>{locations[0].id}</p>
-          </article>
+          <Qrid>
+           <P_image>
+              <img src="/frame.png" width="35" height="35"></img>
+            </P_image>
+            <article>
+              <P3>
+                <p>{locations[0].id}</p>
+              </P3>
+            </article>
+            </Qrid>
         </Border>
         <Border>
           <article>
@@ -31,9 +38,8 @@ export default function Marke() {
 export const Wrapper = styled.article`
   border: 3px solid black;
   border-radius: 100%;
-  text-align: center;
-  padding: 120px;
-  
+  /* text-align: center; */
+  padding: 25%;
   background: #9be1db;
 `;
 
@@ -41,5 +47,27 @@ export const Wrapper = styled.article`
 export const Border = styled.article`
   border: 3px solid black;
   background: #10c4b4;
-  border-radius: 10px;
+  border-radius: 15px;
 `;
+
+/* Qrid vergibt ein Display Flex an den Qr-code und die Id */
+
+export const Qrid = styled.div`
+  display: flex;
+`;
+
+/* P3 ist für die Id zuständig */
+
+export const P3 = styled.p`
+  padding-left: 50px;
+`;
+
+/* P_image ist für den Qr-code zuständig */
+
+export const P_image = styled.p`
+  padding-left: 20px;
+`;
+
+
+
+
