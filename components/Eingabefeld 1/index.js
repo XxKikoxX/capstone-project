@@ -6,13 +6,11 @@ import moment from "moment";
 const now = moment();
 const lockedTime = now.set().format("HH:mm");
 
-export default function Heading() {
+export default function InformationPage() {
   return (
     <OverAllWrapper>
       <DisplayFlex>
-        Kleidung
-        <br />
-        hinterlegt
+        Kleidung <br /> hinterlegt
         <DarkGreenContainer>
           <p>
             <strong>{lockedTime} Uhr</strong>
