@@ -1,48 +1,62 @@
 import styled from "styled-components";
 import { locations } from "../../DB/data";
+import moment from "moment";
 
-/* const date = new Date().toLocaleDateString("en-us", {
-  dateStyle: "medium",
-}); */
-
-const date = new Date();
-console.log(date.getDay());
-
-/* erstellt eine komponente die informationen Anzeigt
-für Eingabefeld 1                   */
+/* const date = moment().format("DD.MM.YYYY"); */
+const now = moment();
+const lockedTime = now.set().format("HH:mm");
 
 export default function Heading() {
   return (
-    <Wrapper>
-      <p>
+    <OverAllWrapper>
+      <DisplayFlex>
         Kleidung
         <br />
         hinterlegt
-      </p>
-      <Border>
-        <p>{/* {date} */}</p>
-      </Border>
-      <p>{locations[0].name} schließt um</p>
-      <Border>
-        <p>{locations[0].closing}</p>
-      </Border>
-    </Wrapper>
+        <DarkGreenContainer>
+          <p>
+            <strong>{lockedTime} Uhr</strong>
+          </p>
+        </DarkGreenContainer>
+      </DisplayFlex>
+      <DisplayFlex>
+        {locations[0].name}
+        <br />
+        schließt um
+        <DarkGreenContainer>
+          <p>
+            <strong>{locations[0].closing}</strong>
+          </p>
+        </DarkGreenContainer>
+      </DisplayFlex>
+    </OverAllWrapper>
   );
 }
 
-/* Border und grau Grüner Hintergrund */
-export const Wrapper = styled.div`
+export const OverAllWrapper = styled.div`
   border: 3px solid black;
-  border-radius: 10px;
+  border-radius: 20px;
   text-align: center;
-  padding: 45px;
-  background: #9be1db;
+  padding: 20px;
+  background-color: rgba(155, 225, 219, 0.6);
+  margin: 20px;
 `;
 
-/* Border und dunkel grüner Hintergrund */
-export const Border = styled.div`
+export const DarkGreenContainer = styled.div`
   border: 3px solid black;
-  border-radius: 10px;
+  border-radius: 15px;
   background: #10c4b4;
-  padding: 1px;
+  height: 4rem;
+  width: 7rem;
 `;
+
+export const DisplayFlex = styled.div`
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* border: 3px solid black; */
+  justify-content: space-between;
+`;
+
+/* export const StyledParagraph = styled.p`
+  flex-wrap: wrap;
+`; */
