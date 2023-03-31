@@ -2,33 +2,23 @@ import styled from "styled-components";
 import { locations } from "../../DB/data";
 import Image from "next/image";
 
-
-
 export default function Marke() {
   return (
     <>
       <OverAllWrapper>
         <HoleInTheMark />
-        <DarkGreenContainer>
-          <DisplayFlex>
+        <DisplayFlex>
+          <DarkGreenContainer>
             <QrImageWrapper>
               <Image src="/frame.png" alt="Qr/code" width={35} height={35} />
             </QrImageWrapper>
-            <ForTheParagraph>
-              <strong>{locations[0].id}</strong>
-            </ForTheParagraph>
-          </DisplayFlex>
-        </DarkGreenContainer>
-        <DarkGreenContainer>
-          <DisplayFlex>
-            <ForTheParagraph>
-              <strong>{locations[0].userName}</strong>
-            </ForTheParagraph>
-            <ForTheParagraph>
-              <strong>{locations[0].name}</strong>
-            </ForTheParagraph>
-          </DisplayFlex>
-        </DarkGreenContainer>
+            <StyledParagraph>{locations[0].id}</StyledParagraph>
+          </DarkGreenContainer>
+          <DarkGreenContainer>
+            <StyledParagraph>{locations[0].userName}</StyledParagraph>
+            <StyledParagraph>{locations[0].name}</StyledParagraph>
+          </DarkGreenContainer>
+        </DisplayFlex>
       </OverAllWrapper>
     </>
   );
@@ -36,6 +26,9 @@ export default function Marke() {
 
 export const OverAllWrapper = styled.div`
   border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 100%;
   text-align: center;
   padding: 17%;
@@ -53,25 +46,19 @@ export const DarkGreenContainer = styled.div`
   rgba(16, 196, 180, 0)
 `;
 
-
-
 export const QrImageWrapper = styled.div`
-  padding-left: 20px;
-  align-self: center;
-`;
-
-
-export const ForTheParagraph = styled.p`
-  flex-wrap: wrap;
-  /* border: 10px solid black; */
+  /* padding-left: 20px;
+  align-self: center; */
+  /* border: 3px solid black; */
 `;
 
 export const DisplayFlex = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* border: 3px solid black; */
+  border: 3px solid black;
   justify-content: space-evenly;
   margin: 2px;
+  flex-direction: column;
 `;
 
 export const HoleInTheMark = styled.div`
@@ -83,4 +70,8 @@ export const HoleInTheMark = styled.div`
   top: 50px;
   background: repeat;
   background-size: 500%;
+`;
+
+export const StyledParagraph = styled.p`
+  font-weight: bold;
 `;
