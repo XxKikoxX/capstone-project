@@ -29,11 +29,11 @@ export const OverAllWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 100%;
+  border-radius: 40rem;
   text-align: center;
-  padding: 17%;
+  padding: 3rem;
   background-color: rgba(155, 225, 219, 0.7);
-  margin: 10px;
+  margin: 13px;
   /* opacity: 50% ; */
 `;
 

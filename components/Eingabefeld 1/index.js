@@ -18,12 +18,12 @@ export default function InformationPage() {
         </DarkGreenContainer>
       </DisplayFlex>
       <DisplayFlex>
-        {locations.name}
+        <p>{locations[0].name}</p>
         <br />
         schließt um
         <DarkGreenContainer>
           <p>
-            <strong>{locations.closing}</strong>
+            <strong>{locations[0].closing}</strong>
           </p>
         </DarkGreenContainer>
       </DisplayFlex>
@@ -35,9 +35,9 @@ export const OverAllWrapper = styled.div`
   border: 3px solid black;
   border-radius: 20px;
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   background-color: rgba(155, 225, 219, 0.6);
-  margin: 20px;
+  margin: 25px;
 `;
 
 export const DarkGreenContainer = styled.div`

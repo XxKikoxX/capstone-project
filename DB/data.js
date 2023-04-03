@@ -6,4 +6,11 @@ export const locations = [
     closing: "18:00 Uhr",
     userName: "Koriath",
   },
+  {
+    id: "567140",
+    name: "Schauspielhaus Bochum",
+    stadt: "Bochum",
+    closing: "20:00 Uhr",
+    userName: "Koriath",
+  },
 ];
