@@ -55,7 +55,7 @@ export const QrImageWrapper = styled.div`
 export const DisplayFlex = styled.div`
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid black;
+  /* border: 3px solid black; */
   justify-content: space-evenly;
   margin: 2px;
   flex-direction: column;
@@ -64,7 +64,7 @@ export const DisplayFlex = styled.div`
 export const HoleInTheMark = styled.div`
   border: 1px solid black;
   border-radius: 100%;
-  height: 60px;
+  height:60px;
   width: 60px;
   position: center;
   top: 50px;
