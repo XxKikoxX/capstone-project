@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { locations } from "../../DB/data";
+import { locations } from "../../db/data";
 import Image from "next/image";
 
 export default function Marke() {
@@ -64,7 +64,7 @@ export const DisplayFlex = styled.div`
 export const HoleInTheMark = styled.div`
   border: 1px solid black;
   border-radius: 100%;
-  height:60px;
+  height: 60px;
   width: 60px;
   position: center;
   top: 50px;

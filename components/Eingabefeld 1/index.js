@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { locations } from "../../DB/data.js";
+import { locations } from "../../db/data.js";
 import moment from "moment";
 
 /* const date = moment().format("DD.MM.YYYY"); */
