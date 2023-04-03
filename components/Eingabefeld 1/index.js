@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { locations } from "../../DB/data";
+import { locations } from "../../db/data";
 import moment from "moment";
 
 /* const date = moment().format("DD.MM.YYYY"); */
@@ -18,12 +18,12 @@ export default function InformationPage() {
         </DarkGreenContainer>
       </DisplayFlex>
       <DisplayFlex>
-        {locations[0].name}
+        {locations.name}
         <br />
         schließt um
         <DarkGreenContainer>
           <p>
-            <strong>{locations[0].closing}</strong>
+            <strong>{locations.closing}</strong>
           </p>
         </DarkGreenContainer>
       </DisplayFlex>
