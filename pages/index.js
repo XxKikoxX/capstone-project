@@ -1,11 +1,11 @@
-import Marke from "../components/Marke";
-import InformationPage from "../components/Eingabefeld 1/index";
+import DataObject_2 from "../components/Data_2/index";
+import DataObject_1 from "../components/Data_1/index";
 
 export default function Home() {
   return (
     <>
-      <InformationPage />
-      <Marke />
+      <DataObject_1 />
+      <DataObject_2 />
     </>
   );
 }

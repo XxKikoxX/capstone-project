@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { locations } from "../../db/data";
 import Image from "next/image";
 
-export default function Marke() {
+export default function DataObject_2() {
   return (
     <>
       <OverAllWrapper>
@@ -32,7 +32,7 @@ export const OverAllWrapper = styled.div`
   border-radius: 40rem;
   text-align: center;
   padding: 3rem;
-  background-color: rgba(155, 225, 219, 0.7);
+  background-color: rgba(155, 225, 219, 0.8);
   margin: 13px;
 `;
 
@@ -47,7 +47,7 @@ export const DarkGreenContainer = styled.div`
 
 export const QrImageWrapper = styled.div`
   margin-top: 10px;
-  margin-bottom:-10px;
+  margin-bottom: -10px;
 `;
 
 export const DisplayFlex = styled.div`

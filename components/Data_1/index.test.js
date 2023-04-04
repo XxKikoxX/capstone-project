@@ -1,6 +1,6 @@
 import React from "react";
 import { getByText, screen, render } from "@testing-library/react";
-import InformationPage from ".";
+import DataObject_1 from ".";
 
 const locations = [
   {
@@ -14,17 +14,17 @@ const locations = [
 
 describe("InformationPage", () => {
   test("displays the location closing time correctly", () => {
-    render(<InformationPage location={locations} />);
+    render(<DataObject_1 location={locations} />);
     expect(screen.getByText(locations[0].closing)).toBeInTheDocument();
   });
 
   test("displays the location name correctly", () => {
-    render(<InformationPage />);
+    render(<DataObject_1 />);
     expect(screen.getByText(locations[0].name)).toBeInTheDocument();
   });
 
   test("displays the correct text for clothing deposit", () => {
-    render(<InformationPage location={locations} />);
+    render(<DataObject_1 location={locations} />);
     expect(screen.getByText("Kleidung hinterlegt")).toBeInTheDocument();
   });
 });
