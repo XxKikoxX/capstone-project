@@ -1,6 +1,5 @@
 import React from "react";
-import { screen, getByText, render } from "@testing-library/react";
-import moment from "moment";
+import { getByText, screen, render } from "@testing-library/react";
 import InformationPage from ".";
 
 const locations = [
@@ -20,7 +19,7 @@ describe("InformationPage", () => {
   });
 
   test("displays the location name correctly", () => {
-    render(<InformationPage location={locations} />);
+    render(<InformationPage />);
     expect(screen.getByText(locations[0].name)).toBeInTheDocument();
   });
 

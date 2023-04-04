@@ -17,9 +17,13 @@ export default function InformationPage() {
         </DarkGreenContainer>
       </DisplayFlex>
       <DisplayFlex>
-        {locations[0].name}
-        <br />
-        schließt um
+        <p>
+          {locations[0].name}
+
+          <br />
+
+          <span>schließt um</span>
+        </p>
         <DarkGreenContainer>
           <p>
             <strong>{locations[0].closing}</strong>
@@ -53,7 +57,3 @@ export const DisplayFlex = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-
-
-
-
