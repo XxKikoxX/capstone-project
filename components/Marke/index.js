@@ -34,7 +34,6 @@ export const OverAllWrapper = styled.div`
   padding: 3rem;
   background-color: rgba(155, 225, 219, 0.7);
   margin: 13px;
-  /* opacity: 50% ; */
 `;
 
 export const DarkGreenContainer = styled.div`
@@ -47,15 +46,13 @@ export const DarkGreenContainer = styled.div`
 `;
 
 export const QrImageWrapper = styled.div`
-  /* padding-left: 20px;
-  align-self: center; */
-  /* border: 3px solid black; */
+  margin-top: 10px;
+  margin-bottom:-10px;
 `;
 
 export const DisplayFlex = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* border: 3px solid black; */
   justify-content: space-evenly;
   margin: 2px;
   flex-direction: column;

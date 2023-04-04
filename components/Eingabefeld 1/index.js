@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { locations } from "../../db/data.js";
 import moment from "moment";
 
-/* const date = moment().format("DD.MM.YYYY"); */
 const now = moment();
 const lockedTime = now.set().format("HH:mm");
 
@@ -18,7 +17,7 @@ export default function InformationPage() {
         </DarkGreenContainer>
       </DisplayFlex>
       <DisplayFlex>
-        <p>{locations[0].name}</p>
+        {locations[0].name}
         <br />
         schließt um
         <DarkGreenContainer>
@@ -34,7 +33,6 @@ export default function InformationPage() {
 export const OverAllWrapper = styled.div`
   border: 3px solid black;
   border-radius: 20px;
-  text-align: center;
   padding: 25px;
   background-color: rgba(155, 225, 219, 0.6);
   margin: 25px;
@@ -43,18 +41,19 @@ export const OverAllWrapper = styled.div`
 export const DarkGreenContainer = styled.div`
   border: 3px solid black;
   border-radius: 15px;
+  text-align: center;
   background: #10c4b4;
   height: 4rem;
-  width: 7rem;
+  width: 120px;
+  min-width: 90px;
 `;
 
 export const DisplayFlex = styled.div`
   display: flex;
-  /* flex-wrap: wrap; */
-  /* border: 3px solid black; */
   justify-content: space-between;
+  align-items: center;
 `;
 
-/* export const StyledParagraph = styled.p`
-  flex-wrap: wrap;
-`; */
+
+
+
