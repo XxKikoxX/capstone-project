@@ -9,10 +9,10 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
-    /* background: #91fff5; */
-    background-image: url("/Logo.png");
+    background: #91fff5;
+    /* background-image: url("/Background.png");
     background-repeat: repeat;
-    background-size: 100%;
+    background-size: 100%; */
     
     
     
