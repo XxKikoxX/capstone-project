@@ -4,7 +4,6 @@ import Image from "next/image";
 
 export default function DataObject_2() {
   return (
-    <>
       <OverAllWrapper>
         <HoleInTheMark />
         <DisplayFlex>
@@ -20,11 +19,10 @@ export default function DataObject_2() {
           </DarkGreenContainer>
         </DisplayFlex>
       </OverAllWrapper>
-    </>
   );
 }
 
-export const OverAllWrapper = styled.div`
+export const OverAllWrapper = styled.section`
   border: 3px solid black;
   display: flex;
   flex-direction: column;
@@ -36,7 +34,7 @@ export const OverAllWrapper = styled.div`
   margin: 13px;
 `;
 
-export const DarkGreenContainer = styled.div`
+export const DarkGreenContainer = styled.section`
   border: 3px solid black;
   background: #10c4b4;
   border-radius: 15px;
@@ -45,12 +43,12 @@ export const DarkGreenContainer = styled.div`
   rgba(16, 196, 180, 0)
 `;
 
-export const QrImageWrapper = styled.div`
+export const QrImageWrapper = styled.section`
   margin-top: 10px;
   margin-bottom: -10px;
 `;
 
-export const DisplayFlex = styled.div`
+export const DisplayFlex = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -58,7 +56,7 @@ export const DisplayFlex = styled.div`
   flex-direction: column;
 `;
 
-export const HoleInTheMark = styled.div`
+export const HoleInTheMark = styled.section`
   border: 1px solid black;
   border-radius: 100%;
   height: 60px;

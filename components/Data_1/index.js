@@ -7,13 +7,12 @@ const lockedTime = now.set().format("HH:mm");
 
 export default function DataObject_1() {
   return (
+    <>
     <OverAllWrapper>
       <DisplayFlex>
-        Kleidung <br /> hinterlegt
+        <Text>Kleidung{`\n`}hinterlegt</Text>
         <DarkGreenContainer>
-          <p>
-            <strong>{lockedTime} Uhr</strong>
-          </p>
+          <p>{lockedTime} Uhr</p>
         </DarkGreenContainer>
       </DisplayFlex>
       <DisplayFlex>
@@ -29,6 +28,7 @@ export default function DataObject_1() {
         </DarkGreenContainer>
       </DisplayFlex>
     </OverAllWrapper>
+    </>
   );
 }
 
@@ -54,4 +54,8 @@ export const DisplayFlex = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const Text = styled.p`
+  white-space: pre-line;
 `;
