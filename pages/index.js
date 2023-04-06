@@ -1,9 +1,11 @@
-import Heading from "../components/Heading";
+import DataObject_2 from "../components/Data_2/index";
+import DataObject_1 from "../components/Data_1/index";
 
 export default function Home() {
   return (
-    <main>
-      <Heading>🐠 Tropical Fish Capstone Template 🐠</Heading>
-    </main>
+    <>
+      <DataObject_1 />
+      <DataObject_2 />
+    </>
   );
 }
