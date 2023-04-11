@@ -8,13 +8,14 @@ export default createGlobalStyle`
   }
   body {
     margin: 0;
-    font-family: system-ui;
-    background: #91fff5;
-    /* background-image: url("/Background.png");
+    /* font-family: system-ui; */
+    font-family: 'Nunito', sans-serif;    background: #91fff5;
+    background-image:url("/Background1.svg");
     background-repeat: repeat;
-    background-size: 100%; */
+    background-size: 100%;
     
     
     
   }
 `;
+/* -webkit-filter:blur(px); */

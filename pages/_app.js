@@ -6,6 +6,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Head>
+        
         <title>Capstone Project</title>
       </Head>
       <Component {...pageProps} />
