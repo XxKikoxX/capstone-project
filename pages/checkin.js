@@ -18,7 +18,7 @@ export default function CheckIn() {
     <>
       <ImageWrapper>
         <Image
-          src="/../public/Logo.png"
+          src="/Logo.png"
           height={210}
           width={290}
           alt="A Picture of a Hanger with Text around"
