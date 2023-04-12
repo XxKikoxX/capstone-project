@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { locations } from "../../db/data";
 import Image from "next/image";
 
 export default function DataObject_2({ location }) {
   return (
     <OverAllWrapper key={location.id}>
-      {/* <HoleInTheMark /> */}
       <DisplayFlex>
         <DarkGreenContainer>
           <QrImageWrapper>
@@ -32,7 +30,6 @@ export const OverAllWrapper = styled.section`
   padding: 3rem;
   background-color: rgba(155, 225, 219, 0.8);
   margin: 13px;
-
   box-shadow: 20px 18px 19px 5px black;
 `;
 
@@ -56,17 +53,6 @@ export const DisplayFlex = styled.section`
   margin: 2px;
   flex-direction: column;
 `;
-
-/* export const HoleInTheMark = styled.section`
-  border: 1px solid black;
-  border-radius: 100%;
-  height: 60px;
-  width: 60px;
-  position: center;
-  margin-bottom:5px;
-  background: #91fff5;
-  box-shadow: 20px 15px 16px black;
-`; */
 
 export const StyledParagraph = styled.p`
   font-weight: bold;

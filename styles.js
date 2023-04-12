@@ -8,7 +8,6 @@ export default createGlobalStyle`
   }
   body {
     margin: 0;
-    /* font-family: system-ui; */
     font-family: 'Nunito', sans-serif;    background: #91fff5;
     background-image:url("/Background1.svg");
     background-repeat: repeat;

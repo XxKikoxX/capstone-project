@@ -1,30 +1,29 @@
 import React from "react";
-import { getByText, screen, render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import DataObject_1 from ".";
 
-const locations = [
-  {
-    id: "567139",
-    name: "Musiktheater Piano",
-    stadt: "Dortmund",
-    closing: "18:00 Uhr",
-    userName: "Koriath",
-  },
-];
+test("Displays correct location name and closing time", async () => {
+  const location = {
+    id: 1,
+    name: "Test Location",
+    closing: "18:00",
+  };
+  render(<DataObject_1 location={location} />);
+  const nameElement = await screen.findByText(/Test Location/i);
+  const closingTimeElement = await screen.findByText("18:00");
+  expect(nameElement).toBeInTheDocument();
+  expect(closingTimeElement).toBeInTheDocument();
+});
 
-describe("InformationPage", () => {
-  test("displays the location closing time correctly", () => {
-    render(<DataObject_1 location={locations} />);
-    expect(screen.getByText(locations[0].closing)).toBeInTheDocument();
-  });
-
-  test("displays the location name correctly", () => {
-    render(<DataObject_1 />);
-    expect(screen.getByText(locations[0].name)).toBeInTheDocument();
-  });
-
-  test("displays the correct text for clothing deposit", () => {
-    render(<DataObject_1 location={locations} />);
-    expect(screen.getByText("Kleidung hinterlegt")).toBeInTheDocument();
-  });
+test("Displays the correct locked time", async () => {
+  const location = {
+    id: 1,
+    name: "Test Location",
+    closing: "18:00",
+  };
+  render(<DataObject_1 location={location} />);
+  const now = new Date();
+  const regex = new RegExp(now.getHours() + ":" + now.getMinutes());
+  const lockedTimeElement = await screen.findByText(regex);
+  expect(lockedTimeElement).toBeInTheDocument();
 });

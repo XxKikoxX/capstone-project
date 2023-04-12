@@ -42,7 +42,6 @@ export default function CheckIn() {
   );
 }
 export const AllInputWrapper = styled.section`
-  /* border: 3px solid black; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,7 +72,7 @@ export const StyledButton = styled.button`
   }
 `;
 export const StyledForm = styled.form`
-  align-items: center;
+  align-items: ;
 `;
 
 export const NumberInputWrapper = styled.section`
