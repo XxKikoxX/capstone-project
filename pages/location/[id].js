@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import DataObject_1 from "../../components/Data_1";
-import DataObject_2 from "../../components/Data_2";
+import Information from "../../components/Information";
+import Dog_Tag from "../../components/Dog_Tag";
 import { locations } from "../../db/data";
 import CheckoutButton from "../../components/CheckOutButton";
 
@@ -15,8 +15,8 @@ export default function InformationPage({ checkinTime }) {
 
   return (
     <>
-      <DataObject_1 checkinTime={checkinTime} location={location} />
-      <DataObject_2 location={location} />
+      <Information checkinTime={checkinTime} location={location} />
+      <Dog_Tag location={location} />
       <CheckoutButton />
     </>
   );

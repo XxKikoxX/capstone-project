@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function DataObject_1({ location, checkinTime }) {
+export default function Information({ location, checkinTime }) {
   return (
     <>
       <OverAllWrapper key={location.id}>

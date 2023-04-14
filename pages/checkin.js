@@ -1,17 +1,9 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-/* import { locations } from "../db/data"; */
 
 export default function CheckIn({ checkinTime, setCheckinTime }) {
-  /* function handleCheckin() { */
-
-  /* } */
   const router = useRouter();
-  /* let nge = new Date().toLocaleString("de-DE"); */
-
-  /* const [time, setTime] = useState(locations, {defaultValue:locations}); */
-
   function handleCheckIn(event) {
     event.preventDefault();
     const time = new Date()
@@ -23,16 +15,10 @@ export default function CheckIn({ checkinTime, setCheckinTime }) {
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    /* setTime([data, ...time]); */
-    /* console.log(data, time); */
+
     router.push(`/location/${data.id}`);
   }
-  /* function handleChange({ event, index }) {
-    const { value } = event.target;
-    const list = [...time];
-    list[index] = { ...list[index], lockedTime: value };
-    setTime(list);
-  } */
+
   return (
     <>
       <ImageWrapper>
@@ -41,6 +27,7 @@ export default function CheckIn({ checkinTime, setCheckinTime }) {
           height={200}
           width={290}
           alt="A Picture of a Hanger with Text around"
+          priority="high"
         />
       </ImageWrapper>
       <AllInputWrapper>
@@ -66,10 +53,10 @@ export default function CheckIn({ checkinTime, setCheckinTime }) {
   );
 }
 export const AllInputWrapper = styled.section`
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px; */
+  margin-top: 50px;
 `;
 
 export const ImageWrapper = styled.section`
@@ -82,7 +69,6 @@ export const ImageWrapper = styled.section`
   align-items: center;
   margin-top: 70px;
   background-color: rgba(155, 225, 219, 0.8);
-  /* width:20rem; */
 `;
 
 export const StyledButton = styled.button`
@@ -95,7 +81,7 @@ export const StyledButton = styled.button`
     background: none;
     border: none;
   }
-  font-weight: 1000;
+  font-weight: bold;
 `;
 export const StyledForm = styled.form`
   display: flex;
@@ -116,6 +102,7 @@ export const NumberInputWrapper = styled.section`
   }
   width: 12rem;
   text-align: center;
+  font-weight: bold;
 `;
 
 export const StyledParagraph = styled.p`
@@ -125,9 +112,11 @@ export const StyledParagraph = styled.p`
   padding: 10px;
   text-align: center;
   box-shadow: 20px 15px 16px black;
-  margin: 30px;
+  margin: 25px;
   font-weight: 500;
-  font-size: 10px;
+  font-size: 10.5px;
   height: 4rem;
   width: 12rem;
+  font-weight: bold;
+  color: #363636;
 `;

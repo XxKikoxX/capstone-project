@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-export default function DataObject_2({ location }) {
+export default function Dog_Tag({ location }) {
   return (
     <OverAllWrapper key={location.id}>
       <DisplayFlex>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Link from "next/link";
 export default function CheckoutButton() {
   return (
     <>
@@ -8,7 +7,7 @@ export default function CheckoutButton() {
   );
 }
 export const StyledButton = styled.button`
-  margin-top: 0px;
+  margin-top: -8px;
   box-shadow: 20px 15px 16px black;
   border-radius: 10px;
   padding: 20px;
@@ -17,5 +16,4 @@ export const StyledButton = styled.button`
     background: none;
     border: none;
   }
-  /* font-weight: 1000; */
 `;

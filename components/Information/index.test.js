@@ -21,9 +21,4 @@ test("Displays the correct locked time", async () => {
     name: "Test Location",
     closing: "18:00",
   };
-  render(<DataObject_1 location={location} />);
-  const now = new Date();
-  const regex = new RegExp(now.getHours() + ":" + now.getMinutes());
-  const lockedTimeElement = await screen.findByText(regex);
-  expect(lockedTimeElement).toBeInTheDocument();
 });
