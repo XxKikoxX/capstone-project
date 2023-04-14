@@ -1,16 +1,13 @@
 import styled from "styled-components";
-import moment from "moment";
 
-export default function DataObject_1({ location }) {
-  const now = moment();
-  const lockedTime = now.set().format("HH:mm");
+export default function DataObject_1({ location, checkinTime }) {
   return (
     <>
       <OverAllWrapper key={location.id}>
         <DisplayFlex>
           <Text>Kleidung{`\n`}hinterlegt</Text>
           <DarkGreenContainer>
-            <StyledParagraph>{lockedTime} Uhr</StyledParagraph>
+            <StyledParagraph>{checkinTime} Uhr</StyledParagraph>
           </DarkGreenContainer>
         </DisplayFlex>
         <DisplayFlex>
