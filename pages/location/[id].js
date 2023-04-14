@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Information from "../../components/Information";
 import Dog_Tag from "../../components/Dog_Tag";
 import { locations } from "../../db/data";
-import CheckoutButton from "../../components/CheckOutButton";
+import CheckoutButton from "../../components/CheckoutButton";
 
 export default function InformationPage({ checkinTime }) {
   const router = useRouter();
