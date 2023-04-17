@@ -34,7 +34,7 @@ export default function CheckIn({
     localStorage.push(checkinData);
     router.push(`/location/${data.id}`);
   }
-  console.log(localStorage);
+
   return (
     <>
       <ImageWrapper>
