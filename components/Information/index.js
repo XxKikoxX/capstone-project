@@ -3,30 +3,33 @@ import styled from "styled-components";
 export default function Information({ location, checkinTime }) {
   return (
     <>
-      <OverAllWrapper key={location.id}>
-        <DisplayFlex>
-          <Text>Kleidung{`\n`}hinterlegt</Text>
-          <DarkGreenContainer>
+      <OverAllWrapperStyledSection key={location.id}>
+        <DisplayFlexStyledSection>
+          <NewLineStyledParagraph>
+            Kleidung{`\n`}hinterlegt
+          </NewLineStyledParagraph>
+          <DarkGreenStyledSection>
             <StyledParagraph>{checkinTime} Uhr</StyledParagraph>
-          </DarkGreenContainer>
-        </DisplayFlex>
-        <DisplayFlex>
-          <Text>
+          </DarkGreenStyledSection>
+        </DisplayFlexStyledSection>
+        <DisplayFlexStyledSection>
+          <NewLineStyledParagraph>
             {location.name}
             {`\n`}
             schließt um
-          </Text>
-          <DarkGreenContainer>
+          </NewLineStyledParagraph>
+          <DarkGreenStyledSection>
             <StyledParagraph>{location.closing}</StyledParagraph>
-          </DarkGreenContainer>
-        </DisplayFlex>
-      </OverAllWrapper>
+          </DarkGreenStyledSection>
+        </DisplayFlexStyledSection>
+      </OverAllWrapperStyledSection>
     </>
   );
 }
 
-export const OverAllWrapper = styled.section`
-  border: 3px solid black;
+export const OverAllWrapperStyledSection = styled.section`
+  border: 2px solid black;
+
   border-radius: 20px;
   padding: 25px;
   background-color: rgba(155, 225, 219, 0.8);
@@ -35,8 +38,8 @@ export const OverAllWrapper = styled.section`
   border-radius: 20px;
 `;
 
-export const DarkGreenContainer = styled.section`
-  border: 3px solid black;
+export const DarkGreenStyledSection = styled.section`
+  border: 2px solid black;
   border-radius: 15px;
   text-align: center;
   background: #10c4b4;
@@ -47,13 +50,13 @@ export const DarkGreenContainer = styled.section`
   justify-content: space-between;
 `;
 
-export const DisplayFlex = styled.section`
+export const DisplayFlexStyledSection = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-export const Text = styled.p`
+export const NewLineStyledParagraph = styled.p`
   white-space: pre-line;
 `;
 export const StyledParagraph = styled.p`

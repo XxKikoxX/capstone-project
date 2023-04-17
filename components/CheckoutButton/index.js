@@ -3,20 +3,19 @@ import Link from "next/link";
 export default function CheckoutButton() {
   return (
     <>
-      <Link href="/">
-        <StyledButton>Checkout</StyledButton>
-      </Link>
+      <StyledLink href="/">Checkout</StyledLink>
     </>
   );
 }
-export const StyledButton = styled.button`
-  margin-top: -8px;
+
+const StyledLink = styled(Link)`
+  border: 2px solid black;
   box-shadow: 20px 15px 16px black;
   border-radius: 10px;
-  padding: 20px;
-  background-color: rgba(155, 225, 219, 0.8);
-  button {
-    background: none;
-    border: none;
-  }
+  padding: 10px;
+  background-color: rgba(211, 59, 29, 0.8);
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  margin-left: 70%;
 `;

@@ -73,10 +73,12 @@ export const AllInputWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  color: #3a2622;
 `;
 
 export const ImageWrapper = styled.section`
   border: 2px solid black;
+  border-color: grey black black grey;
   border-radius: 20px;
   margin: 30px;
   box-shadow: 20px 15px 16px black;
@@ -88,26 +90,23 @@ export const ImageWrapper = styled.section`
 `;
 
 export const StyledButton = styled.button`
-  margin-top: 0px;
   box-shadow: 20px 15px 16px black;
   border-radius: 10px;
   padding: 10px;
   background-color: rgba(155, 225, 219, 0.8);
-  button {
-    background: none;
-    border: none;
-  }
   font-weight: bold;
 `;
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 `;
 
 export const NumberInputWrapper = styled.section`
   box-shadow: 20px 15px 16px black;
   border: 2px solid black;
+  border-color: grey black black grey;
   background-color: rgba(155, 225, 219, 0.8);
   border-radius: 10px;
   padding: 20px;
@@ -124,6 +123,7 @@ export const NumberInputWrapper = styled.section`
 export const StyledParagraph = styled.p`
   background-color: rgba(155, 225, 219, 0.8);
   border: 2px solid black;
+  border-color: grey black black grey;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
