@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import Link from "next/link";
 export default function CheckoutButton() {
   return (
     <>
-      <StyledButton type="submit">Checkout</StyledButton>
+      <Link href="/">
+        <StyledButton>Checkout</StyledButton>
+      </Link>
     </>
   );
 }

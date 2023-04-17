@@ -1,9 +1,10 @@
 import GlobalStyle from "../styles";
 import Head from "next/head";
-import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 export default function App({ Component, pageProps }) {
-  const [checkinTime, setCheckinTime] = useState("");
+  const [checkinTime, setCheckinTime] = useLocalStorageState("time");
+  const [checkins, setCheckins] = useLocalStorageState([]);
   return (
     <>
       <GlobalStyle />
@@ -14,6 +15,8 @@ export default function App({ Component, pageProps }) {
         {...pageProps}
         checkinTime={checkinTime}
         setCheckinTime={setCheckinTime}
+        checkins={checkins}
+        setCheckins={setCheckins}
       />
     </>
   );

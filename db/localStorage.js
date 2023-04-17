@@ -1,8 +1,7 @@
-export const localStorage = [
+export let localStorage = [
   {
+    checkin_Time: "17:15",
     id: "567139",
-    kleidungHinterlegt: "11:46",
-    userName: "Koriath",
-    locationName: "MS Kartcenter",
+    locationName: "Bikertreff Vogel",
   },
 ];

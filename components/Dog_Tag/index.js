@@ -39,6 +39,7 @@ export const DarkGreenContainer = styled.section`
   border-radius: 15px;
   box-shadow: 20px 15px 16px black;
   padding: 6px;
+  width: 12rem;
 `;
 
 export const QrImageWrapper = styled.section`

@@ -1,8 +1,16 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import { locations } from "../db/data";
+import { localStorage } from "../db/localStorage";
 
-export default function CheckIn({ checkinTime, setCheckinTime }) {
+export default function CheckIn({
+  newCheckin,
+  setCheckins,
+  checkinTime,
+  setCheckinTime,
+  checkinData,
+}) {
   const router = useRouter();
   function handleCheckIn(event) {
     event.preventDefault();
@@ -16,9 +24,17 @@ export default function CheckIn({ checkinTime, setCheckinTime }) {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
 
+    const checkinData = {
+      id: data.id,
+      checkin_Time: time,
+      name: locations.find((location) => location.id === data.id).name,
+    };
+    setCheckins([newCheckin]);
+
+    localStorage.push(checkinData);
     router.push(`/location/${data.id}`);
   }
-
+  console.log(localStorage);
   return (
     <>
       <ImageWrapper>
