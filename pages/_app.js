@@ -5,6 +5,15 @@ import useLocalStorageState from "use-local-storage-state";
 export default function App({ Component, pageProps }) {
   const [checkinTime, setCheckinTime] = useLocalStorageState("time");
   const [checkins, setCheckins] = useLocalStorageState([]);
+
+  function handleCheckins(someParameter) {
+    setCheckins(someParameter);
+  }
+
+  function handleCheckinTime(time) {
+    setCheckinTime(time);
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -14,9 +23,9 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         checkinTime={checkinTime}
-        setCheckinTime={setCheckinTime}
+        handleCheckinTime={handleCheckinTime}
         checkins={checkins}
-        setCheckins={setCheckins}
+        handleCheckins={handleCheckins}
       />
     </>
   );

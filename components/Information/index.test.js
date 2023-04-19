@@ -1,24 +1,16 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import DataObject_1 from ".";
+import Information from ".";
 
-test("Displays correct location name and closing time", async () => {
+test("displays correct location name and closing time", () => {
   const location = {
     id: 1,
     name: "Test Location",
     closing: "18:00",
   };
-  render(<DataObject_1 location={location} />);
-  const nameElement = await screen.findByText(/Test Location/i);
-  const closingTimeElement = await screen.findByText("18:00");
+  render(<Information location={location} />);
+  const nameElement = screen.getByText(/Test Location/i);
+  const closingTimeElement = screen.getByText("18:00");
   expect(nameElement).toBeInTheDocument();
   expect(closingTimeElement).toBeInTheDocument();
-});
-
-test("Displays the correct locked time", async () => {
-  const location = {
-    id: 1,
-    name: "Test Location",
-    closing: "18:00",
-  };
 });

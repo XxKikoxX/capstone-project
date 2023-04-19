@@ -1,21 +1,23 @@
 import styled from "styled-components";
-import Image from "next/image";
 
 export default function Dog_Tag({ location }) {
   return (
     <OverAllWrapperStyledSection key={location.id}>
-      <DisplayFlexStyledSection>
-        <DarkGreenStyledSection>
-          <QrImageWrapperStyledSection>
-            <Image src="/frame.png" alt="Qr/code" width={35} height={35} />
-          </QrImageWrapperStyledSection>
+      <DisplayFlexStyledDiv>
+        <DarkGreenStyledDiv>
+          <StyledImage
+            src="/frame.png"
+            alt="Qr/code"
+            width={35}
+            height={35}
+          ></StyledImage>
           <StyledParagraph>{location.id}</StyledParagraph>
-        </DarkGreenStyledSection>
-        <DarkGreenStyledSection>
+        </DarkGreenStyledDiv>
+        <DarkGreenStyledDiv>
           <StyledParagraph>{location.userName}</StyledParagraph>
           <StyledParagraph>{location.name}</StyledParagraph>
-        </DarkGreenStyledSection>
-      </DisplayFlexStyledSection>
+        </DarkGreenStyledDiv>
+      </DisplayFlexStyledDiv>
     </OverAllWrapperStyledSection>
   );
 }
@@ -35,7 +37,7 @@ export const OverAllWrapperStyledSection = styled.section`
   min-width: 95%;
 `;
 
-export const DarkGreenStyledSection = styled.section`
+export const DarkGreenStyledDiv = styled.div`
   border: 2px solid black;
   background: #10c4b4;
   border-radius: 15px;
@@ -44,12 +46,12 @@ export const DarkGreenStyledSection = styled.section`
   width: 12rem;
 `;
 
-export const QrImageWrapperStyledSection = styled.section`
+export const StyledImage = styled.img`
   margin-top: 10px;
   margin-bottom: -10px;
 `;
 
-export const DisplayFlexStyledSection = styled.section`
+export const DisplayFlexStyledDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

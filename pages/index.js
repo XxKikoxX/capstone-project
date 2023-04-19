@@ -1,9 +1,13 @@
 import CheckIn from "./checkin";
 
-export default function Home({setCheckins,setCheckinTime, checkinTime}) {
+export default function Home({ handleCheckins, handleCheckinTime, checkinTime }) {
   return (
     <>
-      <CheckIn setCheckins={setCheckins} setCheckinTime={setCheckinTime} checkinTime={checkinTime}/>
+      <CheckIn
+        handleCheckins={handleCheckins}
+        handleCheckinTime={handleCheckinTime}
+        checkinTime={checkinTime}
+      />
     </>
   );
 }

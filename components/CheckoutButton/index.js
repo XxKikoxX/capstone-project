@@ -1,11 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 export default function CheckoutButton() {
-  return (
-    <>
-      <StyledLink href="/">Checkout</StyledLink>
-    </>
-  );
+  return <StyledLink href="/">Checkout</StyledLink>;
 }
 
 const StyledLink = styled(Link)`

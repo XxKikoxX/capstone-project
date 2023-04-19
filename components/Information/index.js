@@ -2,28 +2,26 @@ import styled from "styled-components";
 
 export default function Information({ location, checkinTime }) {
   return (
-    <>
-      <OverAllWrapperStyledSection key={location.id}>
-        <DisplayFlexStyledSection>
-          <NewLineStyledParagraph>
-            Kleidung{`\n`}hinterlegt
-          </NewLineStyledParagraph>
-          <DarkGreenStyledSection>
-            <StyledParagraph>{checkinTime} Uhr</StyledParagraph>
-          </DarkGreenStyledSection>
-        </DisplayFlexStyledSection>
-        <DisplayFlexStyledSection>
-          <NewLineStyledParagraph>
-            {location.name}
-            {`\n`}
-            schließt um
-          </NewLineStyledParagraph>
-          <DarkGreenStyledSection>
-            <StyledParagraph>{location.closing}</StyledParagraph>
-          </DarkGreenStyledSection>
-        </DisplayFlexStyledSection>
-      </OverAllWrapperStyledSection>
-    </>
+    <OverAllWrapperStyledSection key={location.id}>
+      <DisplayFlexStyledSection>
+        <NewLineStyledParagraph>
+          Kleidung{`\n`}hinterlegt
+        </NewLineStyledParagraph>
+        <DarkGreenStyledDiv>
+          <StyledParagraph>{checkinTime} Uhr</StyledParagraph>
+        </DarkGreenStyledDiv>
+      </DisplayFlexStyledSection>
+      <DisplayFlexStyledSection>
+        <NewLineStyledParagraph>
+          {location.name}
+          {`\n`}
+          schließt um
+        </NewLineStyledParagraph>
+        <DarkGreenStyledDiv>
+          <StyledParagraph>{location.closing}</StyledParagraph>
+        </DarkGreenStyledDiv>
+      </DisplayFlexStyledSection>
+    </OverAllWrapperStyledSection>
   );
 }
 
@@ -38,7 +36,7 @@ export const OverAllWrapperStyledSection = styled.section`
   border-radius: 20px;
 `;
 
-export const DarkGreenStyledSection = styled.section`
+export const DarkGreenStyledDiv = styled.div`
   border: 2px solid black;
   border-radius: 15px;
   text-align: center;

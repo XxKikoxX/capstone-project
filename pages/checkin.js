@@ -3,36 +3,48 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import { locations } from "../db/data";
 import { localStorage } from "../db/localStorage";
+import IsValidId from "../components/Valid_Id";
 
 export default function CheckIn({
   newCheckin,
-  setCheckins,
+  handleCheckins,
   checkinTime,
-  setCheckinTime,
+  handleCheckinTime,
   checkinData,
+  id,
 }) {
   const router = useRouter();
   function handleCheckIn(event) {
     event.preventDefault();
-    const time = new Date()
-      .toLocaleTimeString()
-      .split(":")
-      .slice(0, 2)
-      .join(":");
-    setCheckinTime(time);
 
+    const input = event.target.elements.IdInput.value;
+
+    console.log(input);
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
 
-    const checkinData = {
-      id: data.id,
-      checkin_Time: time,
-      name: locations.find((location) => location.id === data.id).name,
-    };
-    setCheckins([newCheckin]);
+    if (IsValidId(input)) {
+      const time = new Date()
+        .toLocaleTimeString()
+        .split(":")
+        .slice(0, 2)
+        .join(":");
+      handleCheckinTime(time);
 
-    localStorage.push(checkinData);
-    router.push(`/location/${data.id}`);
+      const checkinData = {
+        id: data.id,
+        checkin_Time: time,
+        name: locations.find((location) => location.id === data.id).name,
+      };
+      handleCheckins([newCheckin]);
+
+      localStorage.push(checkinData);
+      router.push(`/location/${data.id}`);
+    } else {
+      alert(
+        "Uppss...Da ist etwas schiefgegangen. Wir kennen die von dir eingegebene ID nicht, bitte schaue noch einmal auf deinem Bügel, dort sollte sich eine 6-stellige ID befinden. Falls nicht, wende dich bitte an das Personal."
+      );
+    }
   }
 
   return (
@@ -46,29 +58,29 @@ export default function CheckIn({
           priority="high"
         />
       </ImageWrapper>
-      <AllInputWrapper>
-        <StyledForm onSubmit={handleCheckIn}>
-          <NumberInputWrapper>
-            <legend>Bügel-Id/qr-code:</legend>
-            <label htmlFor="IdInput"></label>
-            <input
-              id="IdInput"
-              type="number"
-              name="id"
-              placeholder="...z.b 567139"
-            />
-          </NumberInputWrapper>
-          <StyledParagraph>
-            Die Bügel-Id finden sie mittig auf dem Bügel.{`\n`}Es handelt sich
-            um{`\n`}eine 6-stellige Zahlenabfolge
-          </StyledParagraph>
-          <StyledButton type="submit">CHECK-IN</StyledButton>
-        </StyledForm>
-      </AllInputWrapper>
+
+      <StyledForm onSubmit={handleCheckIn}>
+        <NumberInputWrapper>
+          <legend>Bügel-Id/qr-code:</legend>
+          <label htmlFor="IdInput"></label>
+          <input
+            id="IdInput"
+            type="number"
+            name="id"
+            placeholder="...z.b 567139"
+          />
+        </NumberInputWrapper>
+        <StyledParagraph>
+          Die Bügel-Id finden sie mittig auf dem Bügel.{`\n`}Es handelt sich um
+          {`\n`}eine 6-stellige Zahlenabfolge
+        </StyledParagraph>
+        <StyledButton type="submit">CHECK-IN</StyledButton>
+      </StyledForm>
     </>
   );
 }
-export const AllInputWrapper = styled.section`
+
+export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,12 +108,6 @@ export const StyledButton = styled.button`
   background-color: rgba(155, 225, 219, 0.8);
   font-weight: bold;
 `;
-export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-`;
 
 export const NumberInputWrapper = styled.section`
   box-shadow: 20px 15px 16px black;
@@ -115,7 +121,7 @@ export const NumberInputWrapper = styled.section`
     border-bottom: 2px solid black;
     background: none;
   }
-  width: 12rem;
+  width: 13rem;
   text-align: center;
   font-weight: bold;
 `;

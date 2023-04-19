@@ -1,5 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import { Nunito } from "next/font/google";
 
+const nunito = Nunito({
+  subsets: ["latin"],
+});
+console.log(nunito.style.fontFamily);
 export default createGlobalStyle`
   *,
   *::before,
@@ -8,13 +13,12 @@ export default createGlobalStyle`
   }
   body {
     margin: 0;
-    font-family: 'Nunito', sans-serif;    background: #91fff5;
+    background: #91fff5;
     background-image:url("/Background1.svg");
     background-repeat: repeat;
     background-size: 100%;
-    
-    
-    
-  }
+    font-family: ${nunito.style.fontFamily}; 
+     }
 `;
+
 /* -webkit-filter:blur(px); */
