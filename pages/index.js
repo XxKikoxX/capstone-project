@@ -1,11 +1,13 @@
-import DataObject_2 from "../components/Data_2/index";
-import DataObject_1 from "../components/Data_1/index";
+import CheckIn from "./checkin";
 
-export default function Home() {
+export default function Home({ handleCheckins, handleCheckinTime, checkinTime }) {
   return (
     <>
-      <DataObject_1 />
-      <DataObject_2 />
+      <CheckIn
+        handleCheckins={handleCheckins}
+        handleCheckinTime={handleCheckinTime}
+        checkinTime={checkinTime}
+      />
     </>
   );
 }
