@@ -2,7 +2,7 @@ export const locations = [
   {
     id: "567139",
     name: "Bikertreff Vogel",
-    stadt: "Dortmund",
+    stadt: "Marl",
     closing: "18:00 Uhr",
     userName: "Koriath", 
   },

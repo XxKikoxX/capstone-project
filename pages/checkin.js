@@ -19,7 +19,6 @@ export default function CheckIn({
 
     const input = event.target.elements.IdInput.value;
 
-    console.log(input);
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
 
@@ -61,8 +60,7 @@ export default function CheckIn({
 
       <StyledForm onSubmit={handleCheckIn}>
         <NumberInputWrapper>
-          <legend>Bügel-Id/qr-code:</legend>
-          <label htmlFor="IdInput"></label>
+          <label htmlFor="IdInput">Bügel-Id/QR-code</label>
           <input
             id="IdInput"
             type="number"

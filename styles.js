@@ -4,7 +4,7 @@ import { Nunito } from "next/font/google";
 const nunito = Nunito({
   subsets: ["latin"],
 });
-console.log(nunito.style.fontFamily);
+
 export default createGlobalStyle`
   *,
   *::before,
