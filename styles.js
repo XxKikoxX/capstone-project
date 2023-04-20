@@ -13,6 +13,7 @@ export default createGlobalStyle`
   }
   body {
     margin: 0;
+    /* backdrop-filter: blur(0.9px); */
     background: #91fff5;
     background-image:url("/Background1.svg");
     background-repeat: repeat;

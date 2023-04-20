@@ -3,8 +3,9 @@ import Information from "../../components/Information";
 import Dog_Tag from "../../components/Dog_Tag";
 import { locations } from "../../db/data";
 import CheckoutButton from "../../components/CheckoutButton";
+import Link from "next/link";
 
-export default function InformationPage({ checkinTime }) {
+export default function InformationPage({ checkinTime, checkins }) {
   const router = useRouter();
 
   if (!router.isReady) {
@@ -15,7 +16,12 @@ export default function InformationPage({ checkinTime }) {
 
   return (
     <>
-      <Information checkinTime={checkinTime} location={location} />
+      <Link href="/historyPage">HistoryPage</Link>
+      <Information
+        checkinTime={checkinTime}
+        checkins={checkins}
+        location={location}
+      />
       <Dog_Tag location={location} />
       <CheckoutButton />
     </>

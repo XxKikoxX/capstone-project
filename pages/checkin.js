@@ -4,15 +4,9 @@ import { useRouter } from "next/router";
 import { locations } from "../db/data";
 import { localStorage } from "../db/localStorage";
 import IsValidId from "../components/Valid_Id";
+import Link from "next/link";
 
-export default function CheckIn({
-  newCheckin,
-  handleCheckins,
-  checkinTime,
-  handleCheckinTime,
-  checkinData,
-  id,
-}) {
+export default function CheckIn({ newCheckin, handleCheckins, checkins }) {
   const router = useRouter();
   function handleCheckIn(event) {
     event.preventDefault();
@@ -28,16 +22,18 @@ export default function CheckIn({
         .split(":")
         .slice(0, 2)
         .join(":");
-      handleCheckinTime(time);
 
       const checkinData = {
         id: data.id,
         checkin_Time: time,
         name: locations.find((location) => location.id === data.id).name,
+        stadt: locations.find((location) => location.id === data.id).stadt,
       };
-      handleCheckins([newCheckin]);
+      handleCheckins(checkinData);
 
-      localStorage.push(checkinData);
+      /* console.log(checkins); */
+
+      /* localStorage.push(checkinData); */
       router.push(`/location/${data.id}`);
     } else {
       alert(
@@ -48,6 +44,7 @@ export default function CheckIn({
 
   return (
     <>
+      <Link href="/historyPage">HistoryPage</Link>
       <ImageWrapper>
         <Image
           src="/Logo.png"
@@ -97,6 +94,7 @@ export const ImageWrapper = styled.section`
   align-items: center;
   margin-top: 70px;
   background-color: rgba(155, 225, 219, 0.8);
+  /* backdrop-filter: blur(3px); */
 `;
 
 export const StyledButton = styled.button`
@@ -116,7 +114,7 @@ export const NumberInputWrapper = styled.section`
   padding: 20px;
   input {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     background: none;
   }
   width: 13rem;
@@ -125,7 +123,7 @@ export const NumberInputWrapper = styled.section`
 `;
 
 export const StyledParagraph = styled.p`
-  background-color: rgba(155, 225, 219, 0.8);
+  background-color: rgba(155, 225, 219, 0.5);
   border: 2px solid black;
   border-color: grey black black grey;
   border-radius: 10px;
@@ -139,4 +137,5 @@ export const StyledParagraph = styled.p`
   width: 12rem;
   font-weight: bold;
   color: #363636;
+  backdrop-filter: blur(5px);
 `;

@@ -3,16 +3,20 @@ import Head from "next/head";
 import useLocalStorageState from "use-local-storage-state";
 
 export default function App({ Component, pageProps }) {
-  const [checkinTime, setCheckinTime] = useLocalStorageState("time");
-  const [checkins, setCheckins] = useLocalStorageState([]);
+  /* const [checkinTime, setCheckinTime] = useLocalStorageState("time"); */
+  const [checkins, setCheckins] = useLocalStorageState("checkinData", {
+    defaultValue: [],
+  });
 
-  function handleCheckins(someParameter) {
-    setCheckins(someParameter);
+  function handleCheckins(checkinData) {
+    setCheckins((prev) => {
+      return [...prev, checkinData];
+    });
   }
 
-  function handleCheckinTime(time) {
+  /*  function handleCheckinTime(time) {
     setCheckinTime(time);
-  }
+  } */
 
   return (
     <>
@@ -22,8 +26,8 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Component
         {...pageProps}
-        checkinTime={checkinTime}
-        handleCheckinTime={handleCheckinTime}
+        /* checkinTime={checkinTime} */
+        /* handleCheckinTime={handleCheckinTime} */
         checkins={checkins}
         handleCheckins={handleCheckins}
       />
