@@ -16,7 +16,7 @@ export default function InformationPage({ checkinTime, checkins }) {
 
   return (
     <>
-      <Link href="/historyPage">HistoryPage</Link>
+      {/* <Link href="/historyPage">HistoryPage</Link> */}
       <Information
         checkinTime={checkinTime}
         checkins={checkins}

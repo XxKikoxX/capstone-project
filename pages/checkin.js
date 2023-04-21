@@ -44,7 +44,6 @@ export default function CheckIn({ newCheckin, handleCheckins, checkins }) {
 
   return (
     <>
-      <Link href="/historyPage">HistoryPage</Link>
       <ImageWrapper>
         <Image
           src="/Logo.png"
@@ -92,9 +91,9 @@ export const ImageWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 30px;
   background-color: rgba(155, 225, 219, 0.8);
-  /* backdrop-filter: blur(3px); */
+  
 `;
 
 export const StyledButton = styled.button`
@@ -103,6 +102,17 @@ export const StyledButton = styled.button`
   padding: 10px;
   background-color: rgba(155, 225, 219, 0.8);
   font-weight: bold;
+`;
+
+export const StyleLink = styled(Link)`
+  box-shadow: 20px 15px 16px black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(155, 225, 219, 0.8);
+  font-weight: bold;
+  color: #3a2622;
+  border 2px solid;
+  border-color: black grey grey black;
 `;
 
 export const NumberInputWrapper = styled.section`

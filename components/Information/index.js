@@ -33,6 +33,7 @@ export const OverAllWrapperStyledSection = styled.section`
   margin: 25px;
   box-shadow: 20px 15px 16px black;
   border-radius: 20px;
+  margin-top:10px;
 `;
 
 export const DarkGreenStyledDiv = styled.div`

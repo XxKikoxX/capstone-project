@@ -2,26 +2,24 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export default function HistoryPage({ checkins, checkinData }) {
-  console.log(checkins);
   return (
     <>
       {checkins.length > 0 ? (
         checkins.map((checkinData) => {
           return (
             <StyledSection key={checkinData.id}>
-              <ul>
+              <StyledUl>
                 <li>Bügel-Id: {checkinData.id}</li>
                 <li>Checkin: {checkinData.checkin_Time} Uhr</li>
                 <li>Lokal: {checkinData.name}</li>
                 <li>Stadt: {checkinData.stadt}</li>
-              </ul>
+              </StyledUl>
             </StyledSection>
           );
         })
       ) : (
         <p key="1">Upps...du hast wohl noch keine checkins!!!</p>
       )}
-      <Link href="/">Zurück</Link>
     </>
   );
 }
@@ -36,4 +34,9 @@ const StyledSection = styled.section`
   border-radius: 20px;
   border: 2px solid black;
   border-radius: 20px;
+`;
+
+const StyledUl = styled.ul`
+  list-style-type: none;
+  font-weight: bold;
 `;
