@@ -9,8 +9,8 @@ export default function HistoryPage({ checkins, checkinData }) {
           return (
             <StyledSection key={checkinData.id}>
               <StyledUl>
-                <li>Bügel-Id: {checkinData.id}</li>
-                <li>Checkin: {checkinData.checkin_Time} Uhr</li>
+                <li>Bügel-ID: {checkinData.id}</li>
+                <li>Check-In: {checkinData.checkin_Time} Uhr</li>
                 <li>Lokal: {checkinData.name}</li>
                 <li>Stadt: {checkinData.stadt}</li>
               </StyledUl>
@@ -18,7 +18,7 @@ export default function HistoryPage({ checkins, checkinData }) {
           );
         })
       ) : (
-        <p key="1">Upps...du hast wohl noch keine checkins!!!</p>
+        <p key="1">Uupps...Du hast wohl noch keine Check-Ins!!!</p>
       )}
     </>
   );

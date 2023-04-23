@@ -37,7 +37,7 @@ export default function CheckIn({ newCheckin, handleCheckins, checkins }) {
       router.push(`/location/${data.id}`);
     } else {
       alert(
-        "Uppss...Da ist etwas schiefgegangen. Wir kennen die von dir eingegebene ID nicht, bitte schaue noch einmal auf deinem Bügel, dort sollte sich eine 6-stellige ID befinden. Falls nicht, wende dich bitte an das Personal."
+        "Uupps...Da ist etwas schiefgegangen. Wir kennen die von Dir eingegebene Bügel-ID nicht, bitte schaue noch einmal auf Deinem Bügel nach. Dort sollte sich eine 6-stellige ID-Nummer befinden. Falls nicht, wende Dich bitte an das Personal."
       );
     }
   }
@@ -56,7 +56,7 @@ export default function CheckIn({ newCheckin, handleCheckins, checkins }) {
 
       <StyledForm onSubmit={handleCheckIn}>
         <NumberInputWrapper>
-          <label htmlFor="IdInput">Bügel-Id/QR-code</label>
+          <label htmlFor="IdInput">Bügel-ID/QR-Code</label>
           <input
             id="IdInput"
             type="number"
@@ -65,8 +65,8 @@ export default function CheckIn({ newCheckin, handleCheckins, checkins }) {
           />
         </NumberInputWrapper>
         <StyledParagraph>
-          Die Bügel-Id finden sie mittig auf dem Bügel.{`\n`}Es handelt sich um
-          {`\n`}eine 6-stellige Zahlenabfolge
+          Die Bügel-ID finden Sie mittig auf dem Bügel.{`\n`}Es handelt sich um
+          {`\n`}eine 6-stellige Zahlenabfolge.
         </StyledParagraph>
         <StyledButton type="submit">CHECK-IN</StyledButton>
       </StyledForm>

@@ -10,10 +10,10 @@ const Navbar = () => {
             <StyledLink href="/checkin">Home</StyledLink>
           </StyledLi>
           <StyledLi>
-            <StyledLink href="/historyPage">History Page</StyledLink>
+            <StyledLink href="/historyPage">Check-Ins</StyledLink>
           </StyledLi>
           <StyledLi>
-            <StyledLink href="/about">About</StyledLink>
+            <StyledLink href="/about">Über uns</StyledLink>
           </StyledLi>
         </StyledUl>
       </StyledNavbar>
@@ -24,7 +24,7 @@ export default Navbar;
 
 const StyledLi = styled.li`
   display: inline;
-  padding: 27px;
+  padding: 27.3px;
 `;
 
 const StyledLink = styled(Link)`
@@ -39,7 +39,7 @@ const StyledUl = styled.ul`
   border-color: black grey grey black;
   border-radius: 10px 10px 0px 0px;
   padding: 10px;
-  background-color: rgba(155, 225, 219, 0.8);
+  background-color: rgba(155, 225, 219, 1);
   font-weight: bold;
 `;
 
