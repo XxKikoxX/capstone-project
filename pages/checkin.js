@@ -4,15 +4,9 @@ import { useRouter } from "next/router";
 import { locations } from "../db/data";
 import { localStorage } from "../db/localStorage";
 import IsValidId from "../components/Valid_Id";
+import Link from "next/link";
 
-export default function CheckIn({
-  newCheckin,
-  handleCheckins,
-  checkinTime,
-  handleCheckinTime,
-  checkinData,
-  id,
-}) {
+export default function CheckIn({ newCheckin, handleCheckins, checkins }) {
   const router = useRouter();
   function handleCheckIn(event) {
     event.preventDefault();
@@ -28,20 +22,22 @@ export default function CheckIn({
         .split(":")
         .slice(0, 2)
         .join(":");
-      handleCheckinTime(time);
 
       const checkinData = {
         id: data.id,
         checkin_Time: time,
         name: locations.find((location) => location.id === data.id).name,
+        stadt: locations.find((location) => location.id === data.id).stadt,
       };
-      handleCheckins([newCheckin]);
+      handleCheckins(checkinData);
 
-      localStorage.push(checkinData);
+      /* console.log(checkins); */
+
+      /* localStorage.push(checkinData); */
       router.push(`/location/${data.id}`);
     } else {
       alert(
-        "Uppss...Da ist etwas schiefgegangen. Wir kennen die von dir eingegebene ID nicht, bitte schaue noch einmal auf deinem Bügel, dort sollte sich eine 6-stellige ID befinden. Falls nicht, wende dich bitte an das Personal."
+        "Uupps...Da ist etwas schiefgegangen. Wir kennen die von Dir eingegebene Bügel-ID nicht, bitte schaue noch einmal auf Deinem Bügel nach. Dort sollte sich eine 6-stellige ID-Nummer befinden. Falls nicht, wende Dich bitte an das Personal."
       );
     }
   }
@@ -60,7 +56,7 @@ export default function CheckIn({
 
       <StyledForm onSubmit={handleCheckIn}>
         <NumberInputWrapper>
-          <label htmlFor="IdInput">Bügel-Id/QR-code</label>
+          <label htmlFor="IdInput">Bügel-ID/QR-Code</label>
           <input
             id="IdInput"
             type="number"
@@ -69,8 +65,8 @@ export default function CheckIn({
           />
         </NumberInputWrapper>
         <StyledParagraph>
-          Die Bügel-Id finden sie mittig auf dem Bügel.{`\n`}Es handelt sich um
-          {`\n`}eine 6-stellige Zahlenabfolge
+          Die Bügel-ID finden Sie mittig auf dem Bügel.{`\n`}Es handelt sich um
+          {`\n`}eine 6-stellige Zahlenabfolge.
         </StyledParagraph>
         <StyledButton type="submit">CHECK-IN</StyledButton>
       </StyledForm>
@@ -95,8 +91,9 @@ export const ImageWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 30px;
   background-color: rgba(155, 225, 219, 0.8);
+  
 `;
 
 export const StyledButton = styled.button`
@@ -105,6 +102,17 @@ export const StyledButton = styled.button`
   padding: 10px;
   background-color: rgba(155, 225, 219, 0.8);
   font-weight: bold;
+`;
+
+export const StyleLink = styled(Link)`
+  box-shadow: 20px 15px 16px black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(155, 225, 219, 0.8);
+  font-weight: bold;
+  color: #3a2622;
+  border 2px solid;
+  border-color: black grey grey black;
 `;
 
 export const NumberInputWrapper = styled.section`
@@ -116,7 +124,7 @@ export const NumberInputWrapper = styled.section`
   padding: 20px;
   input {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     background: none;
   }
   width: 13rem;
@@ -125,7 +133,7 @@ export const NumberInputWrapper = styled.section`
 `;
 
 export const StyledParagraph = styled.p`
-  background-color: rgba(155, 225, 219, 0.8);
+  background-color: rgba(155, 225, 219, 0.5);
   border: 2px solid black;
   border-color: grey black black grey;
   border-radius: 10px;
@@ -139,4 +147,5 @@ export const StyledParagraph = styled.p`
   width: 12rem;
   font-weight: bold;
   color: #363636;
+  backdrop-filter: blur(5px);
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Information({ location, checkinTime }) {
+export default function Information({ location, checkinTime, checkins }) {
   return (
     <OverAllWrapperStyledSection key={location.id}>
       <DisplayFlexStyledSection>
@@ -8,7 +8,7 @@ export default function Information({ location, checkinTime }) {
           Kleidung{`\n`}hinterlegt
         </NewLineStyledParagraph>
         <DarkGreenStyledDiv>
-          <StyledParagraph>{checkinTime} Uhr</StyledParagraph>
+          <StyledParagraph>{checkins[0]["checkin_Time"]} Uhr</StyledParagraph>
         </DarkGreenStyledDiv>
       </DisplayFlexStyledSection>
       <DisplayFlexStyledSection>
@@ -27,13 +27,13 @@ export default function Information({ location, checkinTime }) {
 
 export const OverAllWrapperStyledSection = styled.section`
   border: 2px solid black;
-
   border-radius: 20px;
   padding: 25px;
   background-color: rgba(155, 225, 219, 0.8);
   margin: 25px;
   box-shadow: 20px 15px 16px black;
   border-radius: 20px;
+  margin-top:10px;
 `;
 
 export const DarkGreenStyledDiv = styled.div`

@@ -1,17 +1,17 @@
 import GlobalStyle from "../styles";
 import Head from "next/head";
 import useLocalStorageState from "use-local-storage-state";
+import Navbar from "../components/Navbar";
 
 export default function App({ Component, pageProps }) {
-  const [checkinTime, setCheckinTime] = useLocalStorageState("time");
-  const [checkins, setCheckins] = useLocalStorageState([]);
+  const [checkins, setCheckins] = useLocalStorageState("checkinData", {
+    defaultValue: [],
+  });
 
-  function handleCheckins(someParameter) {
-    setCheckins(someParameter);
-  }
-
-  function handleCheckinTime(time) {
-    setCheckinTime(time);
+  function handleCheckins(checkinData) {
+    setCheckins((prev) => {
+      return [...prev, checkinData];
+    });
   }
 
   return (
@@ -22,11 +22,10 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Component
         {...pageProps}
-        checkinTime={checkinTime}
-        handleCheckinTime={handleCheckinTime}
         checkins={checkins}
         handleCheckins={handleCheckins}
       />
+      <Navbar />
     </>
   );
 }
